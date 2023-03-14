@@ -34,7 +34,7 @@ async function uploadFile(filePath, url) {
         console.log(chalk.green('✔️Done with message: ') + `${response.data.message}`);
 
     } catch (error) {
-        console.error(chalk.red("An error occurred!"));
+        console.error(chalk.red("❌  An error occurred!"));
     }
 }
 async function main(){
