@@ -1,12 +1,13 @@
 #!/usr/bin/env node
-const axios = require('axios');
-const FormData = require('form-data');
-const fs = require('fs');
-
-var argv = require('yargs/yargs')(process.argv.slice(2))
-    .usage('UploaderCLI - Personal CLI for upload files to my remote server\nUsage: $0 [options]')
+import axios from "axios";
+import FormData from "form-data";
+import fs from 'fs';
+import chalk from 'chalk';
+import yargs from "yargs";
+var argv = yargs(process.argv.slice(2))
+    .usage(chalk.green('UploaderCLI - Personal CLI for upload files to my remote server'))
     .help('help').alias('help', 'h')
-    .version('version', '1.0.1').alias('version', 'V')
+    .version('version', '0.1.0').alias('version', 'V')
     .options({
         input: {
             alias: 'i',
@@ -30,10 +31,10 @@ async function uploadFile(filePath, url) {
             },
         });
 
-        console.log(`Ended with message: ${response.data.message}`);
+        console.log(chalk.green('✔️Done with message: ') + `${response.data.message}`);
 
     } catch (error) {
-        console.error(error.message);
+        console.error(chalk.red("An error occurred!"));
     }
 }
 async function main(){
