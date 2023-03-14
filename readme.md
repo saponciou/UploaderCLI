@@ -12,13 +12,26 @@ To run UploaderCLI, you'll need:
 
 ## Installation
 
-1. Install UploaderCLI globally:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/saponciou/UploaderCLI.git
+```
+
+2. Install dependencies:
+
+```bash
+cd UploaderCLI
+npm install
+```
+
+3. Install UploaderCLI globally:
 
 ```bash
 npm install -g .
 ```
 
-2. Edit the endpoint url:
+4. Edit the endpoint url:
 
 Go to `./bin/index.js:41` and change the url
 
@@ -26,7 +39,7 @@ Go to `./bin/index.js:41` and change the url
 ...await uploadFile(argv.input, 'http://{ip}:{port}/upload');
 ```
 
-3. Use the `upldr` command to upload a file:
+5. Use the `upldr` command to upload a file:
 
 ```bash
 upldr -i /path/to/file
