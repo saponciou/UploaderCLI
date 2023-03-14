@@ -38,7 +38,7 @@ async function uploadFile(filePath, url) {
     }
 }
 async function main(){
-    await uploadFile(argv.input, 'http://localhost:5000/upload');
+    await uploadFile(argv.input, 'http://localhost:5000/upload'); //change this url
 }
 
 main()
